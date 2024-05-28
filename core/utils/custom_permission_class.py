@@ -14,3 +14,10 @@ class IsOfficer(IsAuthenticated):
         if not super().has_permission(request, view):
             return False
         return request.user.role.name == Role.OfficerRoles.OFFICER
+
+class IsPatient(IsAuthenticated):
+    def has_permission(self, request, view):
+        if not super().has_permission(request, view):
+            return False
+        return request.user.role.name == Role.OfficerRoles.PATIENT
+

@@ -15,7 +15,4 @@ class Consultation(models.Model):
         if self.patient == self.practitioner:
             raise ValidationError('The patient and practitioner cannot be the same person.')
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['patient', 'practitioner'], name='unique_patient_practitioner')
-        ]
+
