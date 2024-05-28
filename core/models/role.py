@@ -7,6 +7,7 @@ class Role(models.Model):
         DOCTOR = 'doctor', 'Doctor'
         NURSE = 'nurse', 'Nurse'
         PHARMACIST = 'pharmacist', 'Pharmacist'
+        OFFICER = 'officer', 'Officer'
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255, choices=OfficerRoles.choices, default=OfficerRoles.PATIENT,unique=True)
